@@ -2,6 +2,7 @@ package com.rohit.report.customer;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,12 +30,12 @@ public class Customer {
 	private String gender;
 	private Long ssn;
 	
-	@OneToOne()
-	@JoinColumn(name="PLAN_NAME")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="PLAN_NAME",unique = true , nullable = false)
 	private PlanName planName;
 	
-	@OneToOne
-	@JoinColumn(name="PLAN_STATUS")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="PLAN_STATUS",unique = true , nullable = false)
 	private PlanStatus planStatus;
 	
 	private Date createdDate;
