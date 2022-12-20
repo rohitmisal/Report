@@ -44,13 +44,17 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public List<Customer> getListOfCustomerByPlanName(String planName) {
 		
-		return custRepo.findByPlanName(planName);
+		Integer planNameId =pNameRepo.findByPlanName(planName);
+		
+		return custRepo.findByPlanName(planNameId);
 	}
 
 	@Override
 	public List<Customer> getListCustomerByPlanStatus(String planStatus) {
 
-		return custRepo.findByPlanStatus(planStatus);
+		Integer planStatusId =pStatusRepo.findByPlanName(planStatus);
+		
+		return custRepo.findByPlanStatus(planStatusId);
 	}
 
 	@Override

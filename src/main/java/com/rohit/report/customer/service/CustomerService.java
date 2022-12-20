@@ -2,8 +2,6 @@ package com.rohit.report.customer.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.rohit.report.customer.Customer;
 import com.rohit.report.plan.PlanName;
 import com.rohit.report.plan.PlanStatus;

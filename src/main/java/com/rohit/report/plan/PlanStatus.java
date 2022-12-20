@@ -15,6 +15,7 @@ public class PlanStatus {
 
 	@Id
 	@GeneratedValue
+	@Column(name="PLAN_STATUS_ID")
 	private Integer id;
 
 	@Column(name="PLAN_STATUS")

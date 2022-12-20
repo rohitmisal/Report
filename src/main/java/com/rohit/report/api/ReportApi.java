@@ -17,36 +17,36 @@ public class ReportApi {
 
 	@Autowired
 	CustomerService custRepo;
-	
+
 	@GetMapping("/customers")
-	public List<Customer> fetchAllCustomers(){
+	public List<Customer> fetchAllCustomers() {
 		return custRepo.getListOfCustomer();
 	}
-	
+
 	@GetMapping("/customer/plannames")
-	public List<PlanName> fetchPlanNames(){
+	public List<PlanName> fetchPlanNames() {
 		return custRepo.getAllPlanName();
-	}	
+	}
 
 	@GetMapping("/customer/planstatus")
-	public List<PlanStatus> fetchPlanStatus(){
+	public List<PlanStatus> fetchPlanStatus() {
 		return custRepo.getAllPlanStatus();
 	}
 
-	@GetMapping("/customer/{planName}")
-	public List<Customer> fetchCustomerByPlanName(@PathVariable("planName") String planName){
+	@GetMapping("/customer/planName/{planName}")
+	public List<Customer> fetchCustomerByPlanName(@PathVariable("planName") String planName) {
 		return custRepo.getListOfCustomerByPlanName(planName);
 	}
-	
-	@GetMapping("/customer/{planStatus}")
-	public List<Customer> fetchCustomerByPlanStatus(@PathVariable("planStatus") String planStatus){
+
+	@GetMapping("/customer/planStatus/{planStatus}")
+	public List<Customer> fetchCustomerByPlanStatus(@PathVariable("planStatus") String planStatus) {
 		return custRepo.getListCustomerByPlanStatus(planStatus);
 	}
-	
+
 	@GetMapping("/customer/{startDate}/{endDate}")
-	public List<Customer> fetchCustomerByDate(@PathVariable("startDate") String startDate, @PathVariable("endDate") String endDate ){
-		return custRepo.getListCustomerByDate(startDate,endDate);
+	public List<Customer> fetchCustomerByDate(@PathVariable("startDate") String startDate,
+			@PathVariable("endDate") String endDate) {
+		return custRepo.getListCustomerByDate(startDate, endDate);
 	}
-	
-	
+
 }

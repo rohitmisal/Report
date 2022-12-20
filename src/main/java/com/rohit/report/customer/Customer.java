@@ -31,11 +31,11 @@ public class Customer {
 	private Long ssn;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="PLAN_NAME",unique = true , nullable = false)
+	@JoinColumn(name="PLAN_NAME_ID", nullable = false)
 	private PlanName planName;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="PLAN_STATUS",unique = true , nullable = false)
+	@JoinColumn(name="PLAN_STATUS_ID", nullable = false)
 	private PlanStatus planStatus;
 	
 	private Date createdDate;
